@@ -1,59 +1,79 @@
+/* ✅ ESTILO GENERAL */
 body {
     background: #f7f7f7;
     font-family: Arial, sans-serif;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
+    margin: 0;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: clamp(28px, 5vw, 42px);
     margin-bottom: 5px;
 }
 
 #turno {
-    font-size: 24px;
+    font-size: clamp(20px, 4vw, 28px);
     margin-bottom: 20px;
 }
 
+/* ✅ TABLERO RESPONSIVE */
 #tablero {
     display: grid;
-    grid-template-columns: repeat(3, 120px);
-    grid-template-rows: repeat(3, 120px);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+
+    /* tamaño flexible: máximo 400px en desktop, 90vw en móvil */
+    width: min(400px, 90vw);
     margin: 0 auto;
-    width: max-content;
 }
 
+/* ✅ CELDAS ADAPTABLES */
 .celda {
-    width: 120px;
-    height: 120px;
+    aspect-ratio: 1 / 1; /* Mantiene cuadrado */
     background: white;
-    border-radius: 10px;
-    font-size: 60px;
+    border-radius: 12px;
+    font-size: clamp(40px, 10vw, 70px);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     cursor: pointer;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.1s;
 }
 
 .celda:hover {
     background: #eaeaea;
+    transform: scale(1.03);
 }
 
+/* ✅ BOTÓN */
 #reiniciar {
     margin-top: 25px;
     padding: 12px 20px;
-    font-size: 18px;
+    font-size: clamp(18px, 4vw, 24px);
     border: none;
     background: #0078ff;
     color: white;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 #reiniciar:hover {
     background: #005fcc;
+    transform: scale(1.05);
+}
+
+/* ✅ MODO APP PARA CELULARES */
+@media (max-width: 480px) {
+    body {
+        padding-top: 10px;
+    }
+
+    #tablero {
+        gap: 6px;
+    }
 }
