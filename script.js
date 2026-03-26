@@ -20,6 +20,7 @@ function manejarClick(e) {
 
     tablero[index] = turno;
     e.target.textContent = turno;
+    e.target.classList.add(turno);
 
     if (revisarGanador()) {
         turnoTexto.textContent = `Ganó: ${turno} 🎉`;
