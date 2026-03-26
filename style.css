@@ -1,39 +1,59 @@
 body {
+    background: #f7f7f7;
     font-family: Arial, sans-serif;
     text-align: center;
-    background: #f2f2f2;
+    padding-top: 30px;
 }
 
 h1 {
-    margin-top: 30px;
+    font-size: 40px;
+    margin-bottom: 5px;
 }
 
-.tablero {
-    width: 300px;
-    height: 300px;
-    margin: 20px auto;
+#turno {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#tablero {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 8px;
+    margin: 0 auto;
+    width: max-content;
 }
 
-.casilla {
+.celda {
+    width: 120px;
+    height: 120px;
     background: white;
-    border: 2px solid #444;
-    font-size: 3rem;
+    border-radius: 10px;
+    font-size: 60px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    transition: background 0.2s ease;
 }
 
-.casilla:hover {
-    background: #e9e9e9;
+.celda:hover {
+    background: #eaeaea;
 }
 
 #reiniciar {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.1rem;
+    margin-top: 25px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    background: #0078ff;
+    color: white;
+    border-radius: 8px;
     cursor: pointer;
+    transition: .2s;
+}
+
+#reiniciar:hover {
+    background: #005fcc;
 }
