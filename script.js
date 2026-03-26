@@ -49,7 +49,10 @@ function reiniciarJuego() {
     turno = "X";
     juegoActivo = true;
     turnoTexto.textContent = "Turno: X";
-    celdas.forEach(c => c.textContent = "");
+    celdas.forEach(c => {
+        c.textContent = "";
+        c.classList.remove("X", "O");  // ✅ limpia completamente la celda
+    });
 }
 
 celdas.forEach(celda => celda.addEventListener("click", manejarClick));
